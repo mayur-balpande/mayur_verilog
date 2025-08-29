@@ -1,0 +1,35 @@
+// 2:1 Multiplexer using if-else
+module mux_2_to_1_ifelse (
+    input a,        
+    input b,        
+    input sel,      
+    output reg out  
+);
+
+always @(*) begin
+    if (sel == 1'b1) begin
+        out = b;
+    end else begin
+        out = a;
+    end
+end
+
+endmodule
+
+
+// 2:1 Multiplexer using case
+module mux_2_to_1_case (
+    input a,        
+    input b,        
+  	input sel,      
+    output reg out  
+);
+
+always @(*) begin
+    case (sel)
+        1'b1: out = b;
+        1'b0: out = a;
+    endcase
+end
+
+endmodule
