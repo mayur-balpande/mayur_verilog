@@ -1,0 +1,19 @@
+//Write code for a D flip-flop with asynchronous reset.
+
+module d_FF_async_reset (
+    input clk,
+    input reset,
+    input d,
+    output reg q
+);
+
+always @(posedge clk or posedge reset) begin
+    if (reset == 1'b1) begin
+        q <= 1'b0;
+    end
+    else begin
+        q <= d;
+    end
+end
+
+endmodule
